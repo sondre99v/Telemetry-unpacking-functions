@@ -1,5 +1,5 @@
 {
-#GLVBMS Current
+
 '625': lambda data: [
     ('GLVBMS_current', int(data, 16)/1000)
 ],
