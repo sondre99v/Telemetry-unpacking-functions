@@ -8,22 +8,22 @@
 #GLVBMS
 
 '620': lambda data: [
-    ('Voltage_0' , int(get_byte(data, 0) + self.get_byte(data, 1), 16)),
-    ('Voltage_1' , int(get_byte(data, 2) + self.get_byte(data, 3), 16)),
-    ('Voltage_2' , int(get_byte(data, 4) + self.get_byte(data, 5), 16)),
-    ('Voltage_3' , int(get_byte(data, 6) + self.get_byte(data, 7), 16))
+    ('Voltage_0' , int(get_byte(data, 0) + get_byte(data, 1), 16)),
+    ('Voltage_1' , int(get_byte(data, 2) + get_byte(data, 3), 16)),
+    ('Voltage_2' , int(get_byte(data, 4) + get_byte(data, 5), 16)),
+    ('Voltage_3' , int(get_byte(data, 6) + get_byte(data, 7), 16))
 ],    
 
 '621': lambda data: [
-    ('Voltage_4' , int(get_byte(data, 0) + self.get_byte(data, 1), 16)),
-    ('Voltage_5' , int(get_byte(data, 2) + self.get_byte(data, 3), 16))
+    ('Voltage_4' , int(get_byte(data, 0) + get_byte(data, 1), 16)),
+    ('Voltage_5' , int(get_byte(data, 2) + get_byte(data, 3), 16))
 ],   
 
 '623': lambda data: [
-    ('Temperature_0' , int(get_byte(data, 0) + self.get_byte(data, 1), 16)),
-    ('Temperature_1' , int(get_byte(data, 2) + self.get_byte(data, 3), 16)),
-    ('Temperature_2' , int(get_byte(data, 4) + self.get_byte(data, 5), 16)),
-    ('Temperature_3' , int(get_byte(data, 6) + self.get_byte(data, 7), 16))
+    ('Temperature_0' , int(get_byte(data, 0) + get_byte(data, 1), 16)),
+    ('Temperature_1' , int(get_byte(data, 2) + get_byte(data, 3), 16)),
+    ('Temperature_2' , int(get_byte(data, 4) + get_byte(data, 5), 16)),
+    ('Temperature_3' , int(get_byte(data, 6) + get_byte(data, 7), 16))
 ],   
 
 '624': lambda data: [
@@ -35,15 +35,15 @@
 ],
 
 '626': lambda data: [
-    ('Min_voltage' , int(get_byte(data, 0) + self.get_byte(data, 1), 16)),
-    ('Max_voltage' , int(get_byte(data, 2) + self.get_byte(data, 3), 16)),
-    ('Total_voltage' , int(get_byte(data, 4) + self.get_byte(data, 5), 16)),
-    ('Min_temperature' , int(get_byte(data, 6) + self.get_byte(data, 7), 16))
+    ('Min_voltage' , int(get_byte(data, 0) + get_byte(data, 1), 16)),
+    ('Max_voltage' , int(get_byte(data, 2) + get_byte(data, 3), 16)),
+    ('Total_voltage' , int(get_byte(data, 4) + get_byte(data, 5), 16)),
+    ('Min_temperature' , int(get_byte(data, 6) + get_byte(data, 7), 16))
 ],
 
 '627': lambda data: [
-    ('Max_Temperature' , int(get_byte(data, 0) + self.get_byte(data, 1), 16)),
-    ('Balance_settings' , int(get_byte(data, 2) + self.get_byte(data, 3), 16))
+    ('Max_Temperature' , int(get_byte(data, 0) + get_byte(data, 1), 16)),
+    ('Balance_settings' , int(get_byte(data, 2) + get_byte(data, 3), 16))
 ],
 
 
