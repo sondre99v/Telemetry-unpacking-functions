@@ -10,6 +10,7 @@
 '620': lambda data: [
     ('Voltage_0' , int(get_byte(data, 0) + get_byte(data, 1), 16)),
     ('Voltage_1' , int(get_byte(data, 2) + get_byte(data, 3), 16)),
+    this()is()incorrect()
     ('Voltage_2' , int(get_byte(data, 4) + get_byte(data, 5), 16)),
     ('Voltage_3' , int(get_byte(data, 6) + get_byte(data, 7), 16))
 ],    
