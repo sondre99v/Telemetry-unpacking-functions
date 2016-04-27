@@ -1,5 +1,8 @@
 {
 
+
+#GLVBMS
+
 '620': lambda data: [
     ('Voltage_0' , int(self.get_byte(data, 0) + self.get_byte(data, 1), 16)),
     ('Voltage_1' , int(self.get_byte(data, 2) + self.get_byte(data, 3), 16)),
