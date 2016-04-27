@@ -1,5 +1,5 @@
-get_byte = lambda message, byte: message[byte*2:byte*2+2]
-get_bit = lambda byte, bit: (byte & (2**bit)) >> bit
+#get_byte = lambda message, byte: message[byte*2:byte*2+2]
+#get_bit = lambda byte, bit: (byte & (2**bit)) >> bit
 
 
 {
