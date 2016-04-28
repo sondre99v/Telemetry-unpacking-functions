@@ -108,34 +108,34 @@
 
 #R16 Electrical data
 '292': lambda data: [
-    ('R16[1] torque current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16)) / 100),
-    ('R16[1] direct current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16)) / 100),
-    ('R16[1] DC current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16)) / 100),
-    ('R16[1] DC voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16)) / 100)
+    ('R16[1] torque current' 		, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
+    ('R16[1] direct current' 		, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
+    ('R16[1] DC current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
+    ('R16[1] DC voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16) / 100)
 ],
 
 #R16 Electrical data
 '296': lambda data: [
-    ('R16[2] torque current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16)) / 100),
-    ('R16[2] direct current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16)) / 100),
-    ('R16[2] DC current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16)) / 100),
-    ('R16[2] DC voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16)) / 100)
+    ('R16[2] torque current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
+    ('R16[2] direct current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
+    ('R16[2] DC current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
+    ('R16[2] DC voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16) / 100)
 ],
 
 #R16 Electrical data
 '29A': lambda data: [
-    ('R16[3] torque current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16)) / 100),
-    ('R16[3] direct current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16)) / 100),
-    ('R16[3] DC current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16)) / 100),
-    ('R16[3] DC voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16)) / 100)
+    ('R16[3] torque current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
+    ('R16[3] direct current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
+    ('R16[3] DC current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
+    ('R16[3] DC voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16) / 100)
 ],
 
 #R16 Electrical data
 '29E': lambda data: [
-    ('R16[4] torque current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16)) / 100),
-    ('R16[4] direct current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16)) / 100),
-    ('R16[4] DC current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16)) / 100),
-    ('R16[4] DC voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16)) / 100)
+    ('R16[4] torque current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
+    ('R16[4] direct current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
+    ('R16[4] DC current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
+    ('R16[4] DC voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16) / 100)
 ],
 
 #R16 Status data
