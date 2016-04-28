@@ -140,27 +140,27 @@
 
 #R16 Status data
 '293': lambda data: [
-    ('R16[1] status bit_{0}'.format(i) 		, int(self.endian_invert(data), 32) & (2**i) != 0) for i in range(32),
-    ('R16[1] accumulated status {0}'.format(i), int(self.endian_invert(data), 32) & (2**i) != 0) for i in range(32, 64)
+    ('R16[1] status bit_{0}'.format(i) 		, int(endian_invert(data), 32) & (2**i) != 0) for i in range(32),
+    ('R16[1] accumulated status {0}'.format(i), int(endian_invert(data), 32) & (2**i) != 0) for i in range(32, 64)
 ]
 
 #R16 Status data
 '297': lambda data: [
-    ('R16[2] status bit_{0}'.format(i) 		, int(self.endian_invert(data), 32) & (2**i) != 0) for i in range(32),
-    ('R16[2] accumulated status {0}'.format(i), int(self.endian_invert(data), 32) & (2**i) != 0) for i in range(32, 64)
+    ('R16[2] status bit_{0}'.format(i) 		, int(endian_invert(data), 32) & (2**i) != 0) for i in range(32),
+    ('R16[2] accumulated status {0}'.format(i), int(endian_invert(data), 32) & (2**i) != 0) for i in range(32, 64)
 ]
 
 
 #R16 Status data
 '29B': lambda data: [
-    ('R16[3] status bit_{0}'.format(i) 		, int(self.endian_invert(data), 32) & (2**i) != 0) for i in range(32),
-    ('R16[3] accumulated status {0}'.format(i), int(self.endian_invert(data), 32) & (2**i) != 0) for i in range(32, 64)
+    ('R16[3] status bit_{0}'.format(i) 		, int(endian_invert(data), 32) & (2**i) != 0) for i in range(32),
+    ('R16[3] accumulated status {0}'.format(i), int(endian_invert(data), 32) & (2**i) != 0) for i in range(32, 64)
 ]
 
 #R16 Status data
 '29F': lambda data: [
-    ('R16[4] status bit_{0}'.format(i) 		, int(self.endian_invert(data), 32) & (2**i) != 0) for i in range(32),
-    ('R16[4] accumulated status {0}'.format(i), int(self.endian_invert(data), 32) & (2**i) != 0) for i in range(32, 64)
+    ('R16[4] status bit_{0}'.format(i) 		, int(endian_invert(data), 32) & (2**i) != 0) for i in range(32),
+    ('R16[4] accumulated status {0}'.format(i), int(endian_invert(data), 32) & (2**i) != 0) for i in range(32, 64)
 ]
 
 }
