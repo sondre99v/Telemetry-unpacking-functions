@@ -3,7 +3,65 @@
 
 
 {
+#ADC_sensor_inputs
+'400': lambda data: [
+    ('Damper position FL' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10),
+    ('Damper rate FL' , int(get_byte(data, 3) + get_byte(data, 2), 16)/10),
+],
 
+'401': lambda data: [
+    ('Damper position FR' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10),
+    ('Damper rate FR' , int(get_byte(data, 3) + get_byte(data, 2), 16)/10),
+],
+
+'402': lambda data: [
+    ('Damper position RL' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10),
+    ('Damper rate RL' , int(get_byte(data, 3) + get_byte(data, 2), 16)/10),
+],
+
+'403': lambda data: [
+    ('Damper position RR' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10),
+    ('Damper rate RR' , int(get_byte(data, 3) + get_byte(data, 2), 16)/10),
+],
+
+'410': lambda data: [
+    ('Steering position_degrees' , int((get_byte(data, 1) + get_byte(data, 0), 16)*360)/4097)
+],
+
+'411': lambda data: [
+    ('TPS left' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10)
+],
+
+'412': lambda data: [
+    ('TPS right' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10)
+],
+
+'413': lambda data: [
+    ('KERS' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10)
+],
+
+'420': lambda data: [
+    ('Temperature gear FL' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10),
+    ('Temperature gear FR' , int(get_byte(data, 3) + get_byte(data, 2), 16)/10)
+],
+
+'421': lambda data: [
+    ('Temperature gear RL' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10),
+    ('Temperature gear RR' , int(get_byte(data, 3) + get_byte(data, 2), 16)/10)
+],
+
+'422': lambda data: [
+    ('Temperature coolant left' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10)
+],
+
+'423': lambda data: [
+    ('Temperature coolant right' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10)
+],
+
+'421': lambda data: [
+    ('Brake pressure left' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10),
+    ('Brake pressure right' , int(get_byte(data, 3) + get_byte(data, 2), 16)/10)
+],
 
 #GLVBMS
 
