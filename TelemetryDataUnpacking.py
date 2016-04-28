@@ -48,9 +48,9 @@
 
 #R16 mechanical data 1
 '290': lambda data: [
-    ('R16[1] current speed' 	, (int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
-    ('R16[1] speed setpoint' 	, (int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
-    ('R16[1] torque setpoint' 	, (int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
+    ('R16[1] current speed' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
+    ('R16[1] speed setpoint' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
+    ('R16[1] torque setpoint' 	, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
 ],
 
 #R16 mechanical data 2
