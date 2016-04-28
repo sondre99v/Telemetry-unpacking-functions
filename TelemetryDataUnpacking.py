@@ -150,7 +150,6 @@
     ('R16[2] accumulated status {0}'.format(i), int(endian_invert(data), 32) & (2**i) != 0) for i in range(32, 64)
 ]
 
-
 #R16 Status data
 '29B': lambda data: [
     ('R16[3] status bit_{0}'.format(i) 		, int(endian_invert(data), 32) & (2**i) != 0) for i in range(32),
