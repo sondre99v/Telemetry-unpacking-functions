@@ -198,35 +198,35 @@
 
 #R16 Status data
 '293': lambda data: [
-	('R16[1]_status_bit_{0}'.format(i) 	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32)
+	('R16[1]_status_bit_{0}'.format(i) 	, 1 if 0 != int(get_byte(data, 3) + get_byte(data, 2) + get_byte(data, 1) + get_byte(data, 0), 16) & (2**i) else 0) for i in range(32)
 	]+[
-    ('R16[1]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32, 64)
+    ('R16[1]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(get_byte(data, 7) + get_byte(data, 6) + get_byte(data, 5) + get_byte(data, 4), 16) & (2**i) else 0) for i in range(32)
 ],
 
 #R16 Status data
 '297': lambda data: [
-	('R16[2]_status_bit_{0}'.format(i) 	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32)
-    ]+[
-    ('R16[2]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32, 64)
+	('R16[2]_status_bit_{0}'.format(i) 	, 1 if 0 != int(get_byte(data, 3) + get_byte(data, 2) + get_byte(data, 1) + get_byte(data, 0), 16) & (2**i) else 0) for i in range(32)
+	]+[
+    ('R16[2]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(get_byte(data, 7) + get_byte(data, 6) + get_byte(data, 5) + get_byte(data, 4), 16) & (2**i) else 0) for i in range(32)
 ],
 
 #R16 Status data
 '29B': lambda data: [
-	('R16[3]_status_bit_{0}'.format(i) 	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32)
-    ]+[
-    ('R16[3]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32, 64)
+	('R16[3]_status_bit_{0}'.format(i) 	, 1 if 0 != int(get_byte(data, 3) + get_byte(data, 2) + get_byte(data, 1) + get_byte(data, 0), 16) & (2**i) else 0) for i in range(32)
+	]+[
+    ('R16[3]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(get_byte(data, 7) + get_byte(data, 6) + get_byte(data, 5) + get_byte(data, 4), 16) & (2**i) else 0) for i in range(32)
 ],
 
 #R16 Status data
 '29F': lambda data: [
-	('R16[4]_status_bit_{0}'.format(i) 	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32)
-    ]+[
-    ('R16[4]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32, 64)
+	('R16[4]_status_bit_{0}'.format(i) 	, 1 if 0 != int(get_byte(data, 3) + get_byte(data, 2) + get_byte(data, 1) + get_byte(data, 0), 16) & (2**i) else 0) for i in range(32)
+	]+[
+    ('R16[4]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(get_byte(data, 7) + get_byte(data, 6) + get_byte(data, 5) + get_byte(data, 4), 16) & (2**i) else 0) for i in range(32)
 ],
 
 #R16 parameters
 '190': lambda data: [
-    ('R16[1]_parameter_{0}'.format(int(get_byte(data, 1), 8)), int(get_byte(data, 2) + get_byte(data, 3), 16))
+    ('R16[1]_parameter_{0}'.format(uint(get_byte(data, 0), 16)), int(get_byte(data, 2) + get_byte(data, 3), 16))
 ],
 
 }
