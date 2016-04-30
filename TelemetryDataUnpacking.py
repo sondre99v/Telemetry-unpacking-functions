@@ -198,30 +198,30 @@
 
 #R16 Status data
 '293': lambda data: [
-	('R16[1]_status_bit_{0}'.format(i) 	, 1 if 0 != int(endian_invert(data), 32) & (2**i) else 0) for i in range(32)
+	('R16[1]_status_bit_{0}'.format(i) 	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32)
 	]+[
-    ('R16[1]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(endian_invert(data), 32) & (2**i) else 0) for i in range(32, 64)
+    ('R16[1]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32, 64)
 ],
 
 #R16 Status data
 '297': lambda data: [
-	('R16[2]_status_bit_{0}'.format(i) 	, 1 if 0 != int(endian_invert(data), 32) & (2**i) else 0) for i in range(32)
+	('R16[2]_status_bit_{0}'.format(i) 	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32)
     ]+[
-    ('R16[2]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(endian_invert(data), 32) & (2**i) else 0) for i in range(32, 64)
+    ('R16[2]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32, 64)
 ],
 
 #R16 Status data
 '29B': lambda data: [
-	('R16[3]_status_bit_{0}'.format(i) 	, 1 if 0 != int(endian_invert(data), 32) & (2**i) else 0) for i in range(32)
+	('R16[3]_status_bit_{0}'.format(i) 	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32)
     ]+[
-    ('R16[3]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(endian_invert(data), 32) & (2**i) else 0) for i in range(32, 64)
+    ('R16[3]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32, 64)
 ],
 
 #R16 Status data
 '29F': lambda data: [
-	('R16[4]_status_bit_{0}'.format(i) 	, 1 if 0 != int(endian_invert(data), 32) & (2**i) else 0) for i in range(32)
+	('R16[4]_status_bit_{0}'.format(i) 	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32)
     ]+[
-    ('R16[4]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(endian_invert(data), 32) & (2**i) else 0) for i in range(32, 64)
+    ('R16[4]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(data, 32) & (2**i) else 0) for i in range(32, 64)
 ],
 
 #R16 parameters
