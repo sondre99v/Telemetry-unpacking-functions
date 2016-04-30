@@ -224,4 +224,8 @@
     ('R16[4]_accumulated_status_{0}'.format(i)	, 1 if 0 != int(endian_invert(data), 32) & (2**i) else 0) for i in range(32, 64)
 ],
 
+#R16 parameters
+'190': lambda data: [
+    ('R16[{0}]_parameter_{1}'.format(int(get_byte(data, 0)), int(get_byte(data, 1))) , int(get_byte(data, 2) + get_byte(data, 3), 16))
+],
 }
