@@ -226,6 +226,6 @@
 
 #R16 parameters
 '190': lambda data: [
-    ('R16[{0}]_parameter_{1}'.format(int(get_byte(data, 0)), int(get_byte(data, 1))) , int(get_byte(data, 2) + get_byte(data, 3), 16))
+    ('R16[{0}]_parameter_{1}'.format(int(get_byte(data, 0), 8), int(get_byte(data, 1), 8)), int(get_byte(data, 2) + get_byte(data, 3), 16))
 ],
 }
