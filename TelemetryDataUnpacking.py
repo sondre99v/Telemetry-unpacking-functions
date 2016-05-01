@@ -228,6 +228,15 @@
 '190': lambda data: [
     ('R16[1]_parameter_{0}'.format(int(get_byte(data, 0), 16)), int(get_byte(data, 2) + get_byte(data, 3), 16))
 ],
+#
+#ECU Messages
+#ECU SLIP RATIOS
+'451': lambda data: [
+	('SR_FL	 , hexToInt16(get_byte(data, 0) + get_byte(data, 1)) / 1000), 
+	('SR_FR	 , hexToInt16(get_byte(data, 2) + get_byte(data, 3)) / 1000),
+	('SR_RL	 , hexToInt16(get_byte(data, 4) + get_byte(data, 5)) / 1000),
+	('SR_RR	 , hexToInt16(get_byte(data, 6) + get_byte(data, 7)) / 1000)
+],
 
 }
 
