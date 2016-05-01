@@ -1,6 +1,6 @@
 #get_byte = lambda message, byte: message[byte*2:byte*2+2]
 #get_bit = lambda byte, bit: (byte & (2**bit)) >> bit
-#hex_to_int16		Converts little endian message og 2 bytes into a signed int16
+#hex_to_int16(2ByteMessage)		Converts little endian message of 2 bytes into a signed int16
 
 
 {
