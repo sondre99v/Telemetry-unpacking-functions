@@ -106,30 +106,30 @@
 
 #R16 mechanical data 1
 '290': lambda data: [
-    ('R16[1]_current_speed' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
-    ('R16[1]_speed_setpoint' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
-    ('R16[1]_torque_setpoint' 	, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
+    ('R16[1]_current_speed' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 1), 16) & 1 << 7) else '0000') + get_byte(data, 1) + get_byte(data, 0)).decode('hex'))[0] / 100),
+    ('R16[1]_speed_setpoint' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 3), 16) & 1 << 7) else '0000') + get_byte(data, 3) + get_byte(data, 2)).decode('hex'))[0] / 100),
+    ('R16[1]_torque_setpoint' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 5), 16) & 1 << 7) else '0000') + get_byte(data, 5) + get_byte(data, 4)).decode('hex'))[0] / 100)
 ],
 
 #R16 mechanical data 2
 '294': lambda data: [
-    ('R16[2]_current_speed' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
-    ('R16[2]_speed_setpoint' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
-    ('R16[2]_torque_setpoint' 	, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
+    ('R16[2]_current_speed' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 1), 16) & 1 << 7) else '0000') + get_byte(data, 1) + get_byte(data, 0)).decode('hex'))[0] / 100),
+    ('R16[2]_speed_setpoint' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 3), 16) & 1 << 7) else '0000') + get_byte(data, 3) + get_byte(data, 2)).decode('hex'))[0] / 100),
+    ('R16[2]_torque_setpoint' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 5), 16) & 1 << 7) else '0000') + get_byte(data, 5) + get_byte(data, 4)).decode('hex'))[0] / 100)
 ],
 
 #R16 mechanical data 3
 '298': lambda data: [
-    ('R16[3]_current_speed' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
-    ('R16[3]_speed_setpoint' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
-    ('R16[3]_torque_setpoint' 	, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
+    ('R16[3]_current_speed' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 1), 16) & 1 << 7) else '0000') + get_byte(data, 1) + get_byte(data, 0)).decode('hex'))[0] / 100),
+    ('R16[3]_speed_setpoint' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 3), 16) & 1 << 7) else '0000') + get_byte(data, 3) + get_byte(data, 2)).decode('hex'))[0] / 100),
+    ('R16[3]_torque_setpoint' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 5), 16) & 1 << 7) else '0000') + get_byte(data, 5) + get_byte(data, 4)).decode('hex'))[0] / 100)
 ],
 
 #R16 mechanical data 4
 '29C': lambda data: [
-    ('R16[4]_current_speed' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
-    ('R16[4]_speed_setpoint' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
-    ('R16[4]_torque_setpoint' 	, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
+    ('R16[4]_current_speed' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 1), 16) & 1 << 7) else '0000') + get_byte(data, 1) + get_byte(data, 0)).decode('hex'))[0] / 100),
+    ('R16[4]_speed_setpoint' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 3), 16) & 1 << 7) else '0000') + get_byte(data, 3) + get_byte(data, 2)).decode('hex'))[0] / 100),
+    ('R16[4]_torque_setpoint' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 5), 16) & 1 << 7) else '0000') + get_byte(data, 5) + get_byte(data, 4)).decode('hex'))[0] / 100)
 ],
 
 #R16 temp data
@@ -137,7 +137,7 @@
     ('R16[1]_temp_1' 			, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
     ('R16[1]_temp_2' 			, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
     ('R16[1]_temp_3' 			, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
-    ('R16[1]_motor_temp' 				, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
+    ('R16[1]_motor_temp' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
 ],
 	
 #R16 temp data		
@@ -145,7 +145,7 @@
     ('R16[2]_temp_1' 			, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
     ('R16[2]_temp_2' 			, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
     ('R16[2]_temp_3' 			, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
-    ('R16[2]_motor_temp' 				, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
+    ('R16[2]_motor_temp' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
 ],
 	
 #R16 temp data		
@@ -153,7 +153,7 @@
     ('R16[3]_temp_1' 			, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
     ('R16[3]_temp_2' 			, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
     ('R16[3]_temp_3' 			, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
-    ('R16[3]_motor_temp' 				, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
+    ('R16[3]_motor_temp' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100)
 ],
 
 #R16 temp data
@@ -166,34 +166,34 @@
 
 #R16 Electrical data
 '292': lambda data: [
-    ('R16[1]_torque_current' 		, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
-    ('R16[1]_direct_current' 		, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
-    ('R16[1]_DC_current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
-    ('R16[1]_DC_voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16) / 100)
+    ('R16[1]_torque_current' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 1), 16) & 1 << 7) else '0000') + get_byte(data, 1) + get_byte(data, 0)).decode('hex'))[0] / 100),
+    ('R16[1]_direct_current' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 3), 16) & 1 << 7) else '0000') + get_byte(data, 3) + get_byte(data, 2)).decode('hex'))[0] / 100),
+    ('R16[1]_DC_current' 		, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 5), 16) & 1 << 7) else '0000') + get_byte(data, 5) + get_byte(data, 4)).decode('hex'))[0] / 100),
+    ('R16[1]_DC_voltage' 		, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 7), 16) & 1 << 7) else '0000') + get_byte(data, 7) + get_byte(data, 6)).decode('hex'))[0] / 100)
 ],
 
 #R16 Electrical data
 '296': lambda data: [
-    ('R16[2]_torque_current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
-    ('R16[2]_direct_current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
-    ('R16[2]_DC_current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
-    ('R16[2]_DC_voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16) / 100)
+    ('R16[2]_torque_current' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 1), 16) & 1 << 7) else '0000') + get_byte(data, 1) + get_byte(data, 0)).decode('hex'))[0] / 100),
+    ('R16[2]_direct_current' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 3), 16) & 1 << 7) else '0000') + get_byte(data, 3) + get_byte(data, 2)).decode('hex'))[0] / 100),
+    ('R16[2]_DC_current' 		, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 5), 16) & 1 << 7) else '0000') + get_byte(data, 5) + get_byte(data, 4)).decode('hex'))[0] / 100),
+    ('R16[2]_DC_voltage' 		, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 7), 16) & 1 << 7) else '0000') + get_byte(data, 7) + get_byte(data, 6)).decode('hex'))[0] / 100)
 ],
 
 #R16 Electrical data
 '29A': lambda data: [
-    ('R16[3]_torque_current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
-    ('R16[3]_direct_current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
-    ('R16[3]_DC_current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
-    ('R16[3]_DC_voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16) / 100)
+    ('R16[3]_torque_current' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 1), 16) & 1 << 7) else '0000') + get_byte(data, 1) + get_byte(data, 0)).decode('hex'))[0] / 100),
+    ('R16[3]_direct_current' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 3), 16) & 1 << 7) else '0000') + get_byte(data, 3) + get_byte(data, 2)).decode('hex'))[0] / 100),
+    ('R16[3]_DC_current' 		, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 5), 16) & 1 << 7) else '0000') + get_byte(data, 5) + get_byte(data, 4)).decode('hex'))[0] / 100),
+    ('R16[3]_DC_voltage' 		, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 7), 16) & 1 << 7) else '0000') + get_byte(data, 7) + get_byte(data, 6)).decode('hex'))[0] / 100)
 ],
 
 #R16 Electrical data
 '29E': lambda data: [
-    ('R16[4]_torque_current' 	, int(get_byte(data, 0) + get_byte(data, 1), 16) / 100),
-    ('R16[4]_direct_current' 	, int(get_byte(data, 2) + get_byte(data, 3), 16) / 100),
-    ('R16[4]_DC_current' 		, int(get_byte(data, 4) + get_byte(data, 5), 16) / 100),
-    ('R16[4]_DC_voltage' 		, int(get_byte(data, 6) + get_byte(data, 7), 16) / 100)
+    ('R16[4]_torque_current' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 1), 16) & 1 << 7) else '0000') + get_byte(data, 1) + get_byte(data, 0)).decode('hex'))[0] / 100),
+    ('R16[4]_direct_current' 	, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 3), 16) & 1 << 7) else '0000') + get_byte(data, 3) + get_byte(data, 2)).decode('hex'))[0] / 100),
+    ('R16[4]_DC_current' 		, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 5), 16) & 1 << 7) else '0000') + get_byte(data, 5) + get_byte(data, 4)).decode('hex'))[0] / 100),
+    ('R16[4]_DC_voltage' 		, struct.unpack('>i', (('FFFF' if (int(get_byte(data, 7), 16) & 1 << 7) else '0000') + get_byte(data, 7) + get_byte(data, 6)).decode('hex'))[0] / 100)
 ],
 
 #R16 Status data
@@ -226,7 +226,8 @@
 
 #R16 parameters
 '190': lambda data: [
-    ('R16[1]_parameter_{0}'.format(uint(get_byte(data, 0), 16)), int(get_byte(data, 2) + get_byte(data, 3), 16))
+    ('R16[1]_parameter_{0}'.format(int(get_byte(data, 0), 16)), int(get_byte(data, 2) + get_byte(data, 3), 16))
 ],
 
 }
+
