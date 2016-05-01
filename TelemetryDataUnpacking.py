@@ -1,5 +1,6 @@
 #get_byte = lambda message, byte: message[byte*2:byte*2+2]
 #get_bit = lambda byte, bit: (byte & (2**bit)) >> bit
+#hex_to_int16		Converts little endian message og 2 bytes into a signed int16
 
 
 {
@@ -232,10 +233,10 @@
 #ECU Messages
 #ECU SLIP RATIOS
 '451': lambda data: [
-	('SR_FL	 , hexToInt16(get_byte(data, 0) + get_byte(data, 1)) / 1000), 
-	('SR_FR	 , hexToInt16(get_byte(data, 2) + get_byte(data, 3)) / 1000),
-	('SR_RL	 , hexToInt16(get_byte(data, 4) + get_byte(data, 5)) / 1000),
-	('SR_RR	 , hexToInt16(get_byte(data, 6) + get_byte(data, 7)) / 1000)
+	('SR_FL	 , hex_to_int16(get_byte(data, 0) + get_byte(data, 1)) / 1000), 
+	('SR_FR	 , hex_to_int16(get_byte(data, 2) + get_byte(data, 3)) / 1000),
+	('SR_RL	 , hex_to_int16(get_byte(data, 4) + get_byte(data, 5)) / 1000),
+	('SR_RR	 , hex_to_int16(get_byte(data, 6) + get_byte(data, 7)) / 1000)
 ],
 
 }
