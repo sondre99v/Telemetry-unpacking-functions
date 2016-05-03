@@ -5,7 +5,7 @@
 
 {
 #ADC_sensor_inputs
-'400': lambda data: [
+'400': lambda data: [baef
     ('Damper_position_FL' , int(get_byte(data, 1) + get_byte(data, 0), 16)/10),
     ('Damper_rate_FL' , int(get_byte(data, 3) + get_byte(data, 2), 16)/10),
 ],
