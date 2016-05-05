@@ -238,6 +238,42 @@
 	('SR_RL'	 , hex_to_int16(get_byte(data, 4) + get_byte(data, 5)) / 1000),
 	('SR_RR'	 , hex_to_int16(get_byte(data, 6) + get_byte(data, 7)) / 1000)
 ],
+#ECU DAMPER ESTIMATED NORMAL FORCES
+'453': lambda data: [
+	('FZ_DAMPER_FL'	 , hex_to_int16(get_byte(data, 0) + get_byte(data, 1)) / 10), 
+	('FZ_DAMPER_FR'	 , hex_to_int16(get_byte(data, 2) + get_byte(data, 3)) / 10),
+	('FZ_DAMPER_RL'	 , hex_to_int16(get_byte(data, 4) + get_byte(data, 5)) / 10),
+	('FZ_DAMPER_RR'	 , hex_to_int16(get_byte(data, 6) + get_byte(data, 7)) / 10)
+],
+#ECU LOAD TRANSFER AND AERO ESTIMATED NORMAL FORCES
+'454': lambda data: [
+	('FZ_LOAD_FL'	 , hex_to_int16(get_byte(data, 0) + get_byte(data, 1)) / 10), 
+	('FZ_LOAD_FR'	 , hex_to_int16(get_byte(data, 2) + get_byte(data, 3)) / 10),
+	('FZ_LOAD_RL'	 , hex_to_int16(get_byte(data, 4) + get_byte(data, 5)) / 10),
+	('FZ_LOAD_RR'	 , hex_to_int16(get_byte(data, 6) + get_byte(data, 7)) / 10)
+],
+#ECU CONTROL SYSTEM VALUES
+'455': lambda data: [
+	('Mz_reference'	 , hex_to_int16(get_byte(data, 0) + get_byte(data, 1)) / 10), 
+	('Yaw_rate_ref'	 , hex_to_int16(get_byte(data, 2) + get_byte(data, 3)) / 100)
+],
+#ECU GPS LONGITUDE AND LATITUDE
+'456': lambda data: [
+	('LONGITUDE'	, int(get_byte(data, 0) + get_byte(data, 1) + get_byte(data, 2) + get_byte(data, 3)) / 1000000), 
+	('LATITUDE'	 	, int(get_byte(data, 4) + get_byte(data, 5) + get_byte(data, 6) + get_byte(data, 7)) / 1000000)
+],
+#ECU YAW RATE, YAW ACCELERATION
+'458': lambda data: [
+	('Yaw_rate'	 	, hex_to_int16(get_byte(data, 0) + get_byte(data, 1)) / 1000), 
+	('Yaw acc'		, hex_to_int16(get_byte(data, 2) + get_byte(data, 3)) / 100)
+],
+#ECU ACCELERATIONS, INS Vx and Vy
+'459': lambda data: [
+	('Ax'	 	, hex_to_int16(get_byte(data, 0) + get_byte(data, 1)) / 100), 
+	('Ay'		, hex_to_int16(get_byte(data, 2) + get_byte(data, 3)) / 100),
+	('INS_Vx'	, hex_to_int16(get_byte(data, 4) + get_byte(data, 5)) / 100),
+	('INS_Vy'	, hex_to_int16(get_byte(data, 6) + get_byte(data, 7)) / 100)
+],
 
 }
 
