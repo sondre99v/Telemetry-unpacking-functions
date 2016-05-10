@@ -279,5 +279,10 @@
 	('GPS_FIX'	 	, int(get_byte(data, 0), 8)), 
 	('NR_TR_SAT'	, int(get_byte(data, 1), 8))
 ],
+#ECU, ATTITUDE AND INS STATUS
+'45A': lambda data: [
+	('STATUS_ATTITUDE'	 	, int(get_byte(data, 0) + get_byte(data,1), 16)), 
+	('STATUS_INS'			, int(get_byte(data, 2), 8))
+],
 }
 
